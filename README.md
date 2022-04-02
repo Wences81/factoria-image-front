@@ -1,0 +1,1 @@
+# factoria-image-front
