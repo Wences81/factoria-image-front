@@ -7,7 +7,7 @@ const items = createReducer([], {
   [fetchImages.fulfilled]: (_state, { payload }) => payload,
   [addImage.fulfilled]: (state, { payload }) => [payload, ...state],
   [deleteImage.fulfilled]: (state, { payload }) =>
-    state.filter(image => image.id !== payload),
+    state.filter(image => image._id !== payload),
 });
 
 const isLoading = createReducer(false, {

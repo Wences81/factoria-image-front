@@ -42,7 +42,7 @@ export default function ImageForm() {
       <Label>
         Image Path
         <Input
-          type="text"
+          type=""
           name="Image"
           pattern=""
           title=""
