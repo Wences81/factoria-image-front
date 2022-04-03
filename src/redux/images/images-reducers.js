@@ -4,7 +4,7 @@ import { addImage, deleteImage, fetchImages } from './images-operations';
 import { imagesActions } from '.';
 
 const items = createReducer([], {
-  [fetchImages.fulfilled]: (_, state, { payload }) => payload,
+  [fetchImages.fulfilled]: (_state, { payload }) => payload,
   [addImage.fulfilled]: (state, { payload }) => [payload, ...state],
   [deleteImage.fulfilled]: (state, { payload }) =>
     state.filter(image => image.id !== payload),
@@ -23,7 +23,7 @@ const isLoading = createReducer(false, {
 });
 
 const error = createReducer(null, {
-  [fetchImages.rejected]: (_state, { payload }) => payload,
+  [fetchImages.rejected]: (state, { payload }) => payload,
   [fetchImages.pending]: null,
   [addImage.rejected]: (_state, { payload }) => payload,
   [addImage.pending]: null,

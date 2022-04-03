@@ -6,7 +6,7 @@ export const fetchImages = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const images = await imagesApi.fetchImages();
-      return images;
+      return images.data.result;
     } catch (error) {
       return rejectWithValue(error);
     }
@@ -26,10 +26,10 @@ export const addImage = createAsyncThunk(
 
 export const deleteImage = createAsyncThunk(
   'images/deleteImage',
-  async (id, { rejectWithValue }) => {
+  async (_id, { rejectWithValue }) => {
     try {
-      await imagesApi.deleteImage(id);
-      return id;
+      await imagesApi.deleteImage(_id);
+      return _id;
     } catch (error) {
       return rejectWithValue(error.message);
     }

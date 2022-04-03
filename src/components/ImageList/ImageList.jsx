@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { imagesOperations, imagesSelectors } from '../../redux/images/index';
-import { Button, List, Column, Item } from './ImageList.styled';
+
 import PropTypes from 'prop-types';
+import { List, Item, Button, Name } from './ImageList.styled';
 
 export default function ImageList() {
   const dispatch = useDispatch();
@@ -14,14 +15,15 @@ export default function ImageList() {
 
   return (
     <List>
-      {images.map(({ id, name, image }) => (
-        <Item key={id}>
-          <Column>{name}</Column>
-          <Column>{image}</Column>
+      {images.map(({ _id, name, image }) => (
+        <Item key={_id}>
+          <Name>
+            {name} : {image}{' '}
+          </Name>
 
           <Button
             type="button"
-            onClick={() => dispatch(imagesOperations.deleteImage(id))}
+            onClick={() => dispatch(imagesOperations.deleteImage(_id))}
           >
             Delete
           </Button>
