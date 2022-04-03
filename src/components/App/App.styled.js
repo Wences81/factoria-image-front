@@ -5,7 +5,7 @@ export const Title = styled.h2`
   margin: 50px auto 0;
   width: 400px;
   font-family: 'Roboto', sans-serif;
-  color: green;
+  color: red;
   text-transform: uppercase;
   text-align: center;
   font-size: 34px;

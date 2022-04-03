@@ -5,6 +5,7 @@ export default function App() {
   return (
     <div>
       <Title>Image List</Title>
+
       <ImageList />
     </div>
   );
