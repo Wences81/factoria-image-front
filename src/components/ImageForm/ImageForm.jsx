@@ -27,7 +27,7 @@ export default function ImageForm() {
   return (
     <Form onSubmit={handleSubmit}>
       <Label>
-        Name
+        Image Name
         <Input
           type="text"
           name="name"
@@ -52,7 +52,12 @@ export default function ImageForm() {
         />
       </Label>
 
-      <Button type="submit">Add to image</Button>
+      <Button
+        type="submit"
+        onClick={() => dispatch(imagesOperations.addImage({ name, image }))}
+      >
+        Add to image
+      </Button>
     </Form>
   );
 }

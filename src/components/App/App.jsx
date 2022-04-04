@@ -5,8 +5,8 @@ import { Title } from './App.styled';
 export default function App() {
   return (
     <div>
-      <Title>Image List</Title>
       <ImageForm />
+      <Title>Image List</Title>
       <ImageList />
     </div>
   );
